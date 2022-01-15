@@ -13,7 +13,6 @@ import {
 } from "../constants";
 import { resetArrayColour, shuffle } from "../utils";
 
-
 const SortingVisulaizer = () => {
   const [arr, setArr] = useState([]);
   const [isSorting, setIsSorting] = useState(false);
@@ -110,14 +109,16 @@ const SortingVisulaizer = () => {
   }
 
   return (
-    <div className="visualizer-container">
-      <header className="app-header">
-        <h1>Sorting Visulaizer</h1>
+    <div className="flex flex-col min-h-screen">
+      <header className="justify-center">
+        <h1 className="text-4xl py-3 bg-gray-700 text-center text-white">
+          Sorting Visualizer
+        </h1>
       </header>
-      <div className="array-container" ref={containerRef}>
+      <div className="flex flex-1 mt-auto" ref={containerRef}>
         {arr.map((barHeight, index) => (
           <div
-            className="array-bar"
+            className="bg-violet-600 mx-[0.15%]"
             style={{
               height: `${barHeight}vmin`,
               width: `${100 / ARR_LEN}vw`,
@@ -125,34 +126,28 @@ const SortingVisulaizer = () => {
             key={index}></div>
         ))}
       </div>
-      <footer className="app-footer">
-        <ul>
-          <li>
-            <button className="app-button" onClick={initialiseArray}>
-              Create new array
-            </button>
-          </li>
-          <li>
-            <button className="app-button" onClick={bubbleSort}>
-              Bubble sort
-            </button>
-          </li>
-          <li>
-            <button className="app-button" onClick={insertionSort}>
-              Insertion sort
-            </button>
-          </li>
-          <li>
-            <button className="app-button" onClick={mergeSort}>
-              Merge sort
-            </button>
-          </li>
-          <li>
-            <button className="app-button" onClick={quickSort}>
-              Quick sort
-            </button>
-          </li>
-        </ul>
+      <footer className="flex justify-evenly py-6 space-x-2 px-1 bg-gray-700 ">
+        <button
+          className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2"
+          onClick={initialiseArray}>
+          Create new array
+        </button>
+
+        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={bubbleSort}>
+          Bubble sort
+        </button>
+
+        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={insertionSort}>
+          Insertion sort
+        </button>
+
+        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={mergeSort}>
+          Merge sort
+        </button>
+
+        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={quickSort}>
+          Quick sort
+        </button>
       </footer>
     </div>
   );

@@ -118,7 +118,7 @@ const SortingVisulaizer = () => {
       <div className="flex flex-1 mt-auto" ref={containerRef}>
         {arr.map((barHeight, index) => (
           <div
-            className="bg-violet-600 mx-[0.15%]"
+            className="bg-red-600 mx-[0.15%]"
             style={{
               height: `${barHeight}vmin`,
               width: `${100 / ARR_LEN}vw`,
@@ -133,19 +133,27 @@ const SortingVisulaizer = () => {
           Create new array
         </button>
 
-        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={bubbleSort}>
+        <button
+          className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2"
+          onClick={bubbleSort}>
           Bubble sort
         </button>
 
-        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={insertionSort}>
+        <button
+          className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2"
+          onClick={insertionSort}>
           Insertion sort
         </button>
 
-        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={mergeSort}>
+        <button
+          className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2"
+          onClick={mergeSort}>
           Merge sort
         </button>
 
-        <button className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2" onClick={quickSort}>
+        <button
+          className="text-white outline-dotted  hover:text-gray-700 hover:bg-white p-2"
+          onClick={quickSort}>
           Quick sort
         </button>
       </footer>
